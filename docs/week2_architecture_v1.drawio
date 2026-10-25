@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Industrial RAG V1" id="awZfubZnywoat-XreCXQ">
+    <mxGraphModel dx="540" dy="848" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="60fiQMlSAK84mHSlRIdK-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6f6ee;strokeColor=#5aa281;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Candidate documents&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;FIST 2-12 • 2-1 • 2-4 | official public URLs&lt;/font&gt;" vertex="1">
+          <mxGeometry height="97" width="260" x="60" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff0df;strokeColor=#d99a4d;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Source approval gate&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;rights, version, provenance | exclude unapproved files&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="320" x="360" y="198.5" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6f6ee;strokeColor=#5aa281;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="PDF preparation&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;text / tables / sections | chunks + page metadata&lt;/font&gt;" vertex="1">
+          <mxGeometry height="97" width="290" x="720" y="199.5" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6f6ee;strokeColor=#5aa281;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Approved knowledge index&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;retrievable passages + citations | versioned collection&lt;/font&gt;" vertex="1">
+          <mxGeometry height="97" width="320" x="1050" y="199.5" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f3;strokeColor=#8da1af;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Learner&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;student / trainee | conceptual question&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="260" x="57" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f3;strokeColor=#8da1af;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Chat interface&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;input + response view | no plant controls&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="260" x="349" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff0df;strokeColor=#d99a4d;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Scope &amp;amp; privacy&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;hazard / PII screen | out-of-scope refusal&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="260" x="640" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eaf0ff;strokeColor=#7391d0;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Query coordinator&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;search + fallback | time-out handling&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="260" x="933" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6f6ee;strokeColor=#5aa281;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Passage retriever&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;top relevant chunks | source metadata&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="260" x="1225" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eaf0ff;strokeColor=#7391d0;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Language model&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;draft from evidence | no live decisions&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="260" x="1225" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff0df;strokeColor=#d99a4d;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Citation &amp;amp; safety&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;claim support check | answer / abstain&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="260" x="926" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f5f7;strokeColor=#64a6b0;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Answer / safe refusal&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;title/page citations | uncertainty/no authorisation&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="330" x="555" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5edff;strokeColor=#9679c3;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="Evaluation evidence (later)&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;gold QA, retrieval, refusal, latency, provenance tests&lt;/font&gt;" vertex="1">
+          <mxGeometry height="81" width="340" x="60" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-14" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-15" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-16" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-17" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-18" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-19" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-20" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-21" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-22" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-23" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#228461;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#228461;" target="60fiQMlSAK84mHSlRIdK-9" value="approved passages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-24" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738a;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738a;" target="60fiQMlSAK84mHSlRIdK-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-25" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#7f67a7;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#7f67a7;" target="60fiQMlSAK84mHSlRIdK-13" value="later test results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f3;strokeColor=#8da1af;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="OFFLINE: DOCUMENT PREPARATION&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;Candidate sources require approval&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="484" x="56" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ecf0f3;strokeColor=#8da1af;strokeWidth=2;fontFamily=DejaVu Sans;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;spacing=12;" value="ONLINE: QUESTION ANSWERING&lt;br/&gt;&lt;font style=&quot;font-size:13px;&quot;&gt;Evidence before generation&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="484" x="56" y="344" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=DejaVu Sans;fontSize=41;fontColor=#193045;fontStyle=1;" value="Industrial Knowledge Assistance Chatbot —V1 Architecture" vertex="1">
+          <mxGeometry height="60" width="1960" x="65" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="60fiQMlSAK84mHSlRIdK-35" edge="1" parent="1" source="60fiQMlSAK84mHSlRIdK-12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#53738A;strokeWidth=3;endArrow=block;endFill=1;fontSize=13;fontColor=#53738A;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="60fiQMlSAK84mHSlRIdK-6" value="displayed response">
+          <mxGeometry relative="1" x="0.0667" as="geometry">
+            <mxPoint x="800" y="570" as="sourcePoint" />
+            <mxPoint x="1050" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
