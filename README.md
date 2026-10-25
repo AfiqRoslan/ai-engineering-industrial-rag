@@ -1,58 +1,62 @@
-# InternGuide AI
+# Industrial Knowledge Assistance Chatbot
 
-> A document-grounded AI assistant that helps UTM Bachelor in Artificial Intelligence students find information about compulsory industrial training.
+A semester project for SAIA 3113 AI Engineering. The proposed chatbot will answer basic questions about industrial equipment maintenance using information from selected technical manuals.
 
 ## Problem Statement
 
-Students may need to check several university and faculty documents to understand industrial training requirements, placement procedures and reporting. InternGuide AI aims to answer common questions using official UTM information and provide references so users can check the original sources.
+Industrial maintenance information is often spread across several manuals. Finding a complete explanation may require searching different PDFs and comparing related sections. This project explores whether a Retrieval-Augmented Generation (RAG) chatbot can make the information easier to access while providing references to the original documents.
 
 ## Evidence of the Problem
 
-- The [UTM Industrial Training Guidelines (2024)](https://ugs.utm.my/wp-content/uploads/sites/19/2024/11/Final-Garis-Panduan-LI-UTM-2024-Senat.pdf) cover registration, placement, supervision and reporting across different sections.
-- The [FAI Academic Handbook (2025/2026)](https://drive.google.com/file/d/1coXIUom2QVI_YlUtQ0CjFeNkZU2xOPy3/view) lists SAIA 3146 Industrial Training as a 6-credit course with a minimum placement period of 20 weeks.
+- The [U.S. Bureau of Reclamation's FIST manuals](https://www.usbr.gov/power/data/fist_pub.html) include separate publications on mechanical maintenance, rotating machinery alignment and lubrication.
+- [Naqvi et al. (2024)](https://doi.org/10.1016/j.compind.2024.104083) study information retrieval challenges involving technical industrial maintenance text.
 
-These sources show that information comes from more than one document. Student feedback would be needed to establish how difficult it is to find in practice.
+These sources support the project direction, but any time-saving benefit over manual PDF search still needs to be tested.
 
 ## Initial Related Work / Existing Approaches
 
-1. **Official UTM guidelines and faculty handbook:** Reliable sources, but users need to locate and interpret relevant sections across documents.
-2. **UTM Industrial Training System (ITS):** Supports industrial training administration. The reviewed information does not establish a document-grounded question-answering feature. See the [UTM Industrial Training Guidelines](https://ugs.utm.my/wp-content/uploads/sites/19/2024/11/Final-Garis-Panduan-LI-UTM-2024-Senat.pdf).
-3. **Educational RAG chatbots:** Combine retrieval and language generation, but can still return irrelevant or unsupported answers. See [Swacha and Gracel (2025)](https://doi.org/10.3390/app15084234).
+1. **PDF manuals and keyword search:** Official [FIST manuals](https://www.usbr.gov/power/data/fist_pub.html) can be searched individually, but some questions require information from more than one document.
+2. **Industrial semantic search:** [Naqvi et al. (2024)](https://doi.org/10.1016/j.compind.2024.104083) explore transformer-based retrieval for maintenance records, rather than a chatbot that generates referenced answers from technical manuals.
+3. **Retrieval-Augmented Generation:** [Lewis et al. (2020)](https://arxiv.org/abs/2005.11401) introduce an approach that combines retrieval and text generation. This project will apply and evaluate that approach on a small industrial-manual collection.
 
 ## Engineering Gap / Limitation
 
-The reviewed UTM sources do not identify a dedicated assistant for FAI industrial training questions that provides answers grounded in the relevant official documents. InternGuide AI will focus on source-backed answers and clear handling of missing information.
+A small document-grounded question-answering application is needed to combine information from the selected industrial manuals and provide verifiable references. The main engineering challenge is ensuring that retrieved passages are relevant and generated answers remain supported by the documents.
 
 ## Project Objectives
 
-- **O1:** Design a question-answering system using selected official UTM industrial training documents.
-- **O2:** Develop a retrieval-augmented generation (RAG) prototype that answers questions and provides source references.
-- **O3:** Evaluate answer accuracy, source relevance, response time and handling of unsupported questions.
+- **O1:** Design a chatbot that uses selected industrial maintenance manuals as its information source.
+- **O2:** Develop a RAG prototype that retrieves relevant sections and answers questions with document references.
+- **O3:** Evaluate answer accuracy, retrieval relevance, response time and handling of unsupported questions.
 
 ## Target Users
 
-UTM Bachelor in Artificial Intelligence students preparing for compulsory industrial training.
+Engineering students and trainee engineers learning about rotating machinery and basic equipment maintenance.
 
 ## Data Sources
 
-- [UTM Industrial Training Guidelines (2024)](https://ugs.utm.my/wp-content/uploads/sites/19/2024/11/Final-Garis-Panduan-LI-UTM-2024-Senat.pdf)
-- [FAI Bachelor in Artificial Intelligence Academic Handbook (2025/2026)](https://drive.google.com/file/d/1coXIUom2QVI_YlUtQ0CjFeNkZU2xOPy3/view)
-- [UTM Undergraduate Academic Rules, 16th Edition (2022)](https://drive.google.com/file/d/1MKWo-wUZzrHM9PZBNO2S8qZiVVhB-oTh/view)
+- [FIST 2-12 — Mechanical Maintenance of Hydroelectric and Large Pump Units (2024)](https://www.usbr.gov/power/data/fist/FIST_2-12_%285-2024%29.pdf)
+- [FIST 2-1 — Alignment of Rotating Machinery (2024)](https://www.usbr.gov/power/data/fist/FIST_2-1_%285-2024%29.pdf)
+- [FIST 2-4 — Lubrication of Equipment (2024)](https://www.usbr.gov/power/data/fist/FIST_2-4_%285-2024%29.pdf)
 
-**Document use:** The source links are included for reference. Some documents have copyright or reuse restrictions, so full-text ingestion into the prototype requires permission or a suitable authorised alternative. Current faculty requirements must also be verified.
+*These manuals are proposed sources. Their internal-use disclaimer and reuse conditions must be reviewed before any document content is processed or published. PDF copies will not be committed to the public repository without permission.*
 
-## Week 1 Engineering Evidence
+## Project Scope
 
-- [Claude AI observation sheet](docs/week1_observation_sheet.md) (Group 6 activity)
-- [Claude conceptual system map](docs/week1_system_map.png) (Group 6 activity)
-- [InternGuide AI project scope](docs/week1_project_scope.md) (Individual activity)
+The chatbot will support educational questions about the selected manuals. It will not diagnose operating machinery, make maintenance decisions or replace qualified engineers and official safety procedures.
+
+## Week 1 Lab Work
+
+- [Group observation sheet — Claude.ai](docs/week1_observation_sheet.md)
+- [Group conceptual system map — Claude.ai](docs/week1_system_map.png)
+- [Individual project scope](docs/week1_project_scope.md)
 
 ## Weekly Progress
 
 | Week | Focus | Deliverable | Status |
 |---|---|---|---|
-| 1 | Analyse an AI system and define the project scope | Observation sheet, system map, project scope, README | In progress |
+| 1 | AI system analysis and project scoping | Observation sheet, system map, project scope and README | Individual project scope revised |
 
 ## Current Status
 
-This project is at the planning stage. No RAG prototype has been implemented yet.
+The project is at the planning stage. The chatbot has not yet been developed or evaluated.
