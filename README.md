@@ -51,12 +51,23 @@ The chatbot will support educational questions about the selected manuals. It wi
 - [Group conceptual system map — Claude.ai](docs/week1_system_map.png)
 - [Individual project scope](docs/week1_project_scope.md)
 
+## Week 2 Documentation
+
+- [Requirements Specification](docs/week2_requirements.md)
+- [Evaluation Criteria](docs/week2_evaluation_criteria.md)
+- [V1 Architecture Diagram](docs/week2_architecture_v1.png)
+- [Architecture Decisions and Traceability](docs/week2_architecture_decisions.md)
+- [Editable Architecture Diagram](docs/week2_architecture_v1.drawio)
+
 ## Weekly Progress
 
 | Week | Focus | Deliverable | Status |
 |---|---|---|---|
-| 1 | AI system analysis and project scoping | Observation sheet, system map, project scope and README | Individual project scope revised |
+| 1 | AI system analysis and project scoping | Observation sheet, system map, project scope and README | Completed |
+| 2 | Requirements, evaluation criteria and V1 architecture | Requirements specification, evaluation criteria, architecture diagram and design decisions | Completed |
 
 ## Current Status
 
-The project is at the planning stage. The chatbot has not yet been developed or evaluated.
+The project has completed its initial planning and architecture design stages. Functional, non-functional and Responsible AI requirements have been defined, together with evaluation criteria and a conceptual system architecture.
+
+The RAG prototype has not yet been developed or evaluated. Document permissions will be reviewed before the proposed technical manuals are processed.
