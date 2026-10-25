@@ -1,108 +1,84 @@
-# Week 1 Project Scope: InternGuide AI
+# Week 1 Project Scope — Industrial Knowledge Assistance Chatbot
 
 **Course:** SAIA 3113 AI Engineering  
-**Project type:** Individual semester project
+**Activity:** Topic 1 Lab, Part C (Individual)
 
 ## Project Name
-
-InternGuide AI: UTM Industrial Training Information Assistant
+Industrial Knowledge Assistance Chatbot
 
 ## Domain
-
-Higher Education and Student Support
+Industrial equipment maintenance and technical information retrieval.
 
 ## Problem Statement
+Industrial maintenance manuals contain useful technical information, but related topics are often covered in separate documents. For example, understanding rotating machinery maintenance may involve reading different manuals on mechanical maintenance, shaft alignment and lubrication.
 
-UTM students need to refer to several documents when preparing for industrial training. Information about eligibility, placement procedures, training duration and assessment may be found in different university guidelines and faculty handbooks. This makes it harder to find the right information quickly.
-
-InternGuide AI aims to help students ask questions about industrial training and receive clear answers based on official UTM documents. The system will show its sources and tell users when it cannot confirm an answer.
+This project proposes a chatbot that helps engineering students find and understand information from selected technical manuals. The chatbot will retrieve relevant document sections and provide source references rather than relying only on a language model's general knowledge.
 
 ## Evidence of the Problem
 
-**Evidence 1:** UTM's *Industrial Training Guidelines (2024)* cover several steps, including registration, placement, supervision and report submission. Students need to refer to different sections depending on their questions.
+**Evidence 1:** The U.S. Bureau of Reclamation publishes separate manuals for mechanical maintenance, rotating machinery alignment and lubrication. Closely related information is therefore distributed across multiple documents. However, the existence of separate manuals does not establish how much difficulty readers experience when searching them.
 
-**Source:** Universiti Teknologi Malaysia. (2024). *Garis Panduan Latihan Industri: Program Sarjana Muda*, Sections 2.6 to 2.9.  
-https://ugs.utm.my/wp-content/uploads/sites/19/2024/11/Final-Garis-Panduan-LI-UTM-2024-Senat.pdf
+- **Source:** U.S. Bureau of Reclamation, *Facilities Instructions, Standards, and Techniques (FIST) Manuals*. https://www.usbr.gov/power/data/fist_pub.html
 
-**Evidence 2:** The *FAI Bachelor in Artificial Intelligence Academic Handbook (2025/2026)* states that SAIA 3146 Industrial Training carries 6 credits and requires at least 20 weeks of placement. Students may need both the faculty handbook and general UTM guidelines to understand the requirements.
+**Evidence 2:** Naqvi et al. (2024) discuss challenges in searching industrial maintenance records containing specialised terms, abbreviations and unstructured text. The study explores transformer-based semantic search for retrieving relevant maintenance information. Although the study examines records rather than technical manuals, it shows the potential value of better retrieval methods for industrial text.
 
-**Source:** Faculty of Artificial Intelligence. (2025). *Academic Handbook: Bachelor in Artificial Intelligence with Honours 2025/2026*.  
-https://drive.google.com/file/d/1coXIUom2QVI_YlUtQ0CjFeNkZU2xOPy3/view
+- **Source:** Naqvi, S. M. R., et al. (2024). *Unlocking maintenance insights in industrial text through semantic search*. *Computers in Industry, 157–158*, 104083. https://doi.org/10.1016/j.compind.2024.104083
 
-These documents show that the information is spread across several sources. However, further student feedback would be needed to confirm how difficult the current process is for students.
+## Initial Related Work / Existing Approaches
 
-## Initial Related Work
+**1. Reading and searching PDF manuals**
 
-**1. UTM Industrial Training Guidelines and FAI Academic Handbook**
+- **Source:** U.S. Bureau of Reclamation, FIST Manuals. https://www.usbr.gov/power/data/fist_pub.html
+- **Existing approach:** Readers use tables of contents and keyword searches to locate information within manuals.
+- **Limitation:** Questions involving several manuals may still require manual searching and comparison of different sections.
 
-- **Source:** UTM Industrial Training Guidelines (2024) and FAI Academic Handbook (2025/2026).
-- **Approach:** Students read official documents to find information about industrial training.
-- **Limitation:** Students must search through different documents and identify which rules apply to their programme.
+**2. Semantic search for industrial maintenance text**
 
-**2. UTM Industrial Training System (ITS)**
+- **Source:** Naqvi et al. (2024). https://doi.org/10.1016/j.compind.2024.104083
+- **Existing approach:** Transformer-based semantic search is used to retrieve relevant industrial maintenance records.
+- **Limitation:** The study focuses on retrieving records rather than generating referenced answers to questions from a selected collection of maintenance manuals.
 
-- **Source:** UTM Industrial Training Guidelines (2024), Section 2.9; [UTM Faculty of Electrical Engineering Industrial Training website](https://fke.utm.my/li/).
-- **Approach:** ITS is used for industrial training administration and related submissions.
-- **Limitation:** The available information mainly describes administrative functions. It does not establish whether ITS provides a document-based question-answering feature.
+**3. Retrieval-Augmented Generation (RAG)**
 
-**3. Retrieval-Augmented Generation (RAG) Chatbots for Education**
-
-- **Source:** Swacha, J., and Gracel, M. (2025). *Retrieval-Augmented Generation (RAG) Chatbots for Education: A Survey of Applications*. *Applied Sciences, 15*(8), 4234. https://doi.org/10.3390/app15084234
-- **Approach:** RAG combines information retrieval with AI-generated answers.
-- **Limitation:** RAG systems can still retrieve irrelevant information or generate answers that are not fully supported by their sources. The survey does not provide a system specifically for FAI industrial training.
+- **Source:** Lewis et al. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*. https://arxiv.org/abs/2005.11401
+- **Existing approach:** RAG combines information retrieval with a language model to generate responses using external knowledge.
+- **Limitation:** The approach still requires adaptation and evaluation for industrial manuals, particularly to assess retrieval relevance and whether generated answers are supported by the sources.
 
 ## Engineering Gap / Limitation
-
-UTM provides official industrial training documents and an administrative system, but the sources reviewed do not identify a dedicated assistant that answers FAI students' industrial training questions with references to the relevant documents. InternGuide AI will focus on making this information easier to access while reducing unsupported or misleading answers.
+Existing manuals provide technical information, while semantic search and RAG offer ways to retrieve and present it. The remaining engineering task is to build and evaluate a small question-answering application for the selected industrial manuals, with clear source references and appropriate handling of unsupported questions. The project focuses on applying established methods rather than developing a new AI model.
 
 ## Initial Project Objectives
 
-**O1:** To design an AI question-answering system that uses selected official UTM industrial training documents as its knowledge source.
-
-**O2:** To develop a RAG-based prototype that retrieves relevant information, answers student questions and provides source references.
-
-**O3:** To evaluate the prototype based on answer accuracy, source relevance, response time and handling of questions that cannot be answered from the documents.
+- **O1:** To design a chatbot that uses selected industrial maintenance manuals as its information source.
+- **O2:** To develop a RAG-based prototype that retrieves relevant sections and answers questions with document references.
+- **O3:** To evaluate answer accuracy, retrieval relevance, response time and the handling of questions not supported by the documents.
 
 ## Target Users
-
-The main users are UTM Bachelor in Artificial Intelligence students preparing for compulsory industrial training, especially those looking for information about requirements, placements and reports.
+Engineering students and trainee engineers learning about rotating machinery and basic equipment maintenance.
 
 ## Data Sources
 
-**Source 1:** UTM Industrial Training Guidelines (2024)  
-URL: https://ugs.utm.my/wp-content/uploads/sites/19/2024/11/Final-Garis-Panduan-LI-UTM-2024-Senat.pdf
+The following publicly accessible U.S. Bureau of Reclamation manuals are proposed as initial sources:
 
-**Source 2:** FAI Bachelor in Artificial Intelligence Academic Handbook (2025/2026)  
-URL: https://drive.google.com/file/d/1coXIUom2QVI_YlUtQ0CjFeNkZU2xOPy3/view
+1. **FIST 2-12 — Mechanical Maintenance of Hydroelectric and Large Pump Units (2024)**  
+   https://www.usbr.gov/power/data/fist/FIST_2-12_%285-2024%29.pdf
+2. **FIST 2-1 — Alignment of Rotating Machinery (2024)**  
+   https://www.usbr.gov/power/data/fist/FIST_2-1_%285-2024%29.pdf
+3. **FIST 2-4 — Lubrication of Equipment (2024)**  
+   https://www.usbr.gov/power/data/fist/FIST_2-4_%285-2024%29.pdf
 
-**Source 3:** UTM Undergraduate Academic Rules, 16th Edition (2022)  
-URL: https://drive.google.com/file/d/1MKWo-wUZzrHM9PZBNO2S8qZiVVhB-oTh/view
-
-**Note:** The documents are useful for planning the project, but access does not automatically mean they can be copied into an AI database. The FAI handbook includes copyright restrictions. Permission or suitable alternative documents will be needed before using full document content in the prototype. Current faculty requirements should also be checked before development.
+These are candidate documents, not an approved dataset. The manuals are publicly accessible but include an internal-use disclaimer. Processing and reuse conditions must be checked before their contents are indexed. The PDF files will not be uploaded to a public GitHub repository without the necessary permission.
 
 ## Similar to EduAdvisor
-
-Both systems use official university documents to answer student questions. They aim to provide relevant answers with sources rather than relying only on a language model's general knowledge.
+Both systems aim to answer questions using a limited collection of documents and provide references that allow information to be checked against the original sources.
 
 ## Different from EduAdvisor
-
-EduAdvisor covers general academic matters such as courses and graduation requirements. InternGuide AI focuses on industrial training for FAI students, including placement requirements, procedures and reporting. It will not apply for placements or make academic decisions for students.
+EduAdvisor focuses on university academic information. The Industrial Knowledge Assistance Chatbot focuses on industrial equipment and maintenance concepts. Its purpose is educational information support, not diagnosis of operating equipment or authorisation of maintenance work.
 
 ## Responsible AI Risks
 
-**Risk 1: Incorrect or invented information**  
-The AI might give the wrong requirement, procedure or deadline. Students could make mistakes in their industrial training preparation. To reduce this risk, the system should provide references and avoid answering when the documents do not support a claim.
+**Risk 1 — Incorrect or unsupported answers:** The chatbot may misunderstand a manual or generate information not supported by the documents. Incorrect explanations could mislead learners. The proposed controls are source references and clear responses when sufficient evidence is unavailable.
 
-**Risk 2: Outdated information**  
-University or faculty requirements may change between academic sessions. Students could follow rules that are no longer valid. The system should display document dates and remind users to confirm important details with the faculty.
+**Risk 2 — Unsafe maintenance advice:** Generated information could be mistaken for instructions to operate or repair actual machinery. The application will be limited to educational explanations and will not provide site-specific maintenance approval or safety-critical operational decisions.
 
-**Risk 3: Privacy and document permissions**  
-Students might enter personal information, and some university documents may not be permitted for reuse in an AI system. The prototype should avoid collecting sensitive personal details and only process documents that are authorised for this use.
-
-## Initial Evaluation Plan
-
-A small set of questions will be prepared from the approved source documents. The prototype will be tested for answer accuracy, correct references, response time and whether it can recognise questions that are not covered by its sources. Where possible, its results will be compared with basic keyword search.
-
-## Project Scope
-
-The first version will focus on searching approved documents and answering common questions about UTM industrial training. It will not search for job vacancies, submit applications, access private student records or decide whether a student is eligible for training.
+**Risk 3 — Document permissions and privacy:** Some manuals may have usage restrictions, and submitted questions could contain confidential industrial information or personal data. Only documents permitted for the intended processing will be used, and the prototype will avoid collecting confidential or personal information.
