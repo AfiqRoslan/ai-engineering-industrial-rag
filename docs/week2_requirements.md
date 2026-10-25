@@ -2,7 +2,6 @@
 
 **Project:** Industrial Knowledge Assistance Chatbot  
 **Course:** SAIA 3113 AI Engineering  
-**Version:** 1.0 | 25 October 2026  
 **Status:** Proposed requirements; system not yet developed
 
 ## Section 0 — Project Framing and Application Scope
