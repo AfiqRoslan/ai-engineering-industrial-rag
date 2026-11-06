@@ -1,6 +1,6 @@
-# Industrial Knowledge Assistance Chatbot
+# Mechanical Engineering Knowledge Assistant
 
-A semester project for SAIA 3113 AI Engineering. The proposed chatbot will answer basic questions about industrial equipment maintenance using information from selected technical manuals.
+A semester project for SAIA 3113 AI Engineering. This project prepares mechanical engineering reference documents for a future Retrieval-Augmented Generation (RAG) knowledge assistant for engineering students and trainee engineers.
 
 ## Problem Statement
 
@@ -33,7 +33,7 @@ A small document-grounded question-answering application is needed to combine in
 
 Engineering students and trainee engineers learning about rotating machinery and basic equipment maintenance.
 
-## Data Sources
+## Proposed Data Sources (Topics 1-2)
 
 - [FIST 2-12 — Mechanical Maintenance of Hydroelectric and Large Pump Units (2024)](https://www.usbr.gov/power/data/fist/FIST_2-12_%285-2024%29.pdf)
 - [FIST 2-1 — Alignment of Rotating Machinery (2024)](https://www.usbr.gov/power/data/fist/FIST_2-1_%285-2024%29.pdf)
@@ -59,15 +59,77 @@ The chatbot will support educational questions about the selected manuals. It wi
 - [Architecture Decisions and Traceability](docs/week2_architecture_decisions.md)
 - [Editable Architecture Diagram](docs/week2_architecture_v1.drawio)
 
+## Week 3 - PDF Data Engineering Pipeline
+
+### Objective
+
+Develop an executable and repeatable pipeline to prepare mechanical engineering documents for future retrieval-based question answering.
+
+### Actual Data Sources
+
+- DOE Mechanical Science Volume 1 (1993) - 122 pages
+- DOE Mechanical Science Volume 2 (1993) - 130 pages
+
+These documents carry Distribution Statement A, approving public release with unlimited distribution. The previously proposed FIST manuals were not used for this pipeline.
+
+### Implementation
+
+The pipeline follows:
+
+**Ingest -> Inspect -> Prepare -> Store -> Validate -> Record Lineage**
+
+- Language: Python
+- PDF parser: pypdf
+- Processing: Whitespace cleaning and paragraph-aware chunking
+- Chunk size: 500 characters
+- Output format: JSONL
+- Integrity verification: SHA-256
+- Processing architecture: Batch ETL
+
+### Results
+
+| Metric | Result |
+|---|---|
+| Input documents | 2 PDFs |
+| Total PDF pages | 252 |
+| Fixed-size chunks | 714 |
+| Paragraph-aware chunks | 726 |
+| Selected output records | 726 |
+| Part B lineage records | 2 |
+| Part B validation | PASS |
+| Part C repeatability | PASS |
+
+Both methods can split sentences. The selected paragraph-aware configuration does not preserve PDF page references, so page-level citation support remains future work.
+
+### Week 3 Deliverables
+
+- [Executable notebook](notebooks/week3_pipeline.ipynb)
+- [Data inventory](docs/week3_data_inventory.md)
+- [Pipeline diagram](docs/week3_pipeline_diagram.png)
+- [Editable diagram](docs/week3_pipeline_diagram.drawio)
+- [Engineering decisions](docs/week3_pipeline_decisions.md)
+- [Part B prepared data](data/processed/prepared_text.jsonl)
+- [Part B lineage manifest](data/week3_manifest.json)
+- [Part C prepared data](data/pipeline_v1/documents/prepared_text.jsonl)
+- [Part C pipeline manifest](data/pipeline_v1/documents/pipeline_manifest.json)
+
+### Limitations
+
+- PDF page numbers are not preserved.
+- Chunk boundaries can split technical explanations.
+- The 1993 documents are suitable for foundational concepts, not current equipment-specific procedures.
+- Retrieval relevance and answer accuracy have not been evaluated.
+- Source access metadata requires final review.
 ## Weekly Progress
 
 | Week | Focus | Deliverable | Status |
 |---|---|---|---|
 | 1 | AI system analysis and project scoping | Observation sheet, system map, project scope and README | Completed |
 | 2 | Requirements, evaluation criteria and V1 architecture | Requirements specification, evaluation criteria, architecture diagram and design decisions | Completed |
+| 3 | PDF data engineering | Prepared dataset, lineage manifests, executable pipeline and repeatability verification | Completed |
 
 ## Current Status
 
-The project has completed its initial planning and architecture design stages. Functional, non-functional and Responsible AI requirements have been defined, together with evaluation criteria and a conceptual system architecture.
+Topics 1-3 are complete. The project has defined its requirements and architecture, prepared 726 text records from two DOE mechanical science PDFs, and verified pipeline repeatability.
 
-The RAG prototype has not yet been developed or evaluated. Document permissions will be reviewed before the proposed technical manuals are processed.
+The RAG chatbot, retrieval evaluation and page-level citation support have not yet been implemented.

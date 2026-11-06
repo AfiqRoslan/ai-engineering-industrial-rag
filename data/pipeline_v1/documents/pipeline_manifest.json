@@ -1,0 +1,58 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-06T19:55:33.563607+00:00",
+  "data_type": "documents",
+  "configuration": {
+    "chunk_size": 500,
+    "method": "paragraph-aware"
+  },
+  "processing_method": "paragraph-aware text chunks of 500 characters",
+  "sources": [
+    {
+      "path": "D:\\UTM KL\\Course\\Y3S1\\AI Engineering\\Assignment\\data\\raw\\mechanical_science_vol1.pdf",
+      "sha256": "c1e37601164acf95cbaecad93b1db9841ad8d7670bf30a4fdd6ff0a87c6a0070"
+    },
+    {
+      "path": "D:\\UTM KL\\Course\\Y3S1\\AI Engineering\\Assignment\\data\\raw\\mechanical_science_vol2.pdf",
+      "sha256": "f569f8de24e0c9b23fa8f5c965c3d0740daa5e41db0f029ad8e3893d3fd9e2fd"
+    }
+  ],
+  "outputs": [
+    "D:\\UTM KL\\Course\\Y3S1\\AI Engineering\\Assignment\\data\\pipeline_v1\\documents\\prepared_text.jsonl"
+  ],
+  "source_output_mapping": [
+    {
+      "source": "D:\\UTM KL\\Course\\Y3S1\\AI Engineering\\Assignment\\data\\raw\\mechanical_science_vol1.pdf",
+      "output": "D:\\UTM KL\\Course\\Y3S1\\AI Engineering\\Assignment\\data\\pipeline_v1\\documents\\prepared_text.jsonl"
+    },
+    {
+      "source": "D:\\UTM KL\\Course\\Y3S1\\AI Engineering\\Assignment\\data\\raw\\mechanical_science_vol2.pdf",
+      "output": "D:\\UTM KL\\Course\\Y3S1\\AI Engineering\\Assignment\\data\\pipeline_v1\\documents\\prepared_text.jsonl"
+    }
+  ],
+  "inspection": {
+    "documents": [
+      {
+        "source": "mechanical_science_vol1.pdf",
+        "pages": 122,
+        "characters": 169246
+      },
+      {
+        "source": "mechanical_science_vol2.pdf",
+        "pages": 130,
+        "characters": 192232
+      }
+    ]
+  },
+  "validation": {
+    "output_count": 1,
+    "output_sha256": [
+      "7790007170745e2008690b80411c0cf943aad3f9b71efe5c3cf606371c15694f"
+    ],
+    "output_bytes": [
+      537464
+    ]
+  },
+  "source_version": "Not verified",
+  "access_rights": "Not verified - check before sharing"
+}

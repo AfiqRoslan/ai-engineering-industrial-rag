@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="week3-pipeline" name="Week 3 - V1 Pipeline">
+    <mxGraphModel dx="1850" dy="2907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="900" width="1800" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=29;fontStyle=1;fontColor=#1F2937;strokeColor=none;fillColor=none;" value="Industrial Knowledge Assistance Chatbot | Week 3 V1 Data Pipeline" vertex="1">
+          <mxGeometry height="42" width="1640" x="70" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontColor=#64748B;strokeColor=none;fillColor=none;" value="Executed in VS Code / Jupyter  |  Pathway A: PDF/TXT  |  Batch processing  |  Topic 2 traceability: FR2, FR3, NFR2, RAI1, RAI4" vertex="1">
+          <mxGeometry height="34" width="1640" x="70" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="srch" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#ffffff;fillColor=#228754;strokeColor=#228754;" value="01  SOURCE" vertex="1">
+          <mxGeometry height="40" width="216" x="70" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="src" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=13;fontSize=15;fontColor=#163047;fillColor=#DDF6E7;strokeColor=#228754;strokeWidth=1.6;" value="DOE Mechanical Science Vol. 1 (122 pages)&amp;#xa;DOE Mechanical Science Vol. 2 (130 pages)" vertex="1">
+          <mxGeometry height="120" width="216" x="70" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="ingh" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#ffffff;fillColor=#228754;strokeColor=#228754;" value="02  INGEST" vertex="1">
+          <mxGeometry height="40" width="216" x="304" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ing" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=13;fontSize=15;fontColor=#163047;fillColor=#DDF6E7;strokeColor=#228754;strokeWidth=1.6;" value="Load 2 PDFs with pypdf&amp;#xa;Extract document text" vertex="1">
+          <mxGeometry height="120" width="216" x="304" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="insh" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#ffffff;fillColor=#228754;strokeColor=#228754;" value="03  INSPECT" vertex="1">
+          <mxGeometry height="40" width="216" x="538" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ins" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=13;fontSize=15;fontColor=#163047;fillColor=#DDF6E7;strokeColor=#228754;strokeWidth=1.6;" value="Check readable text&amp;#xa;Record page counts and characters" vertex="1">
+          <mxGeometry height="120" width="216" x="538" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="preh" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#ffffff;fillColor=#3273B6;strokeColor=#3273B6;" value="04  PREPARE / TRANSFORM" vertex="1">
+          <mxGeometry height="40" width="216" x="772" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="pre" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=13;fontSize=15;fontColor=#163047;fillColor=#E2EFFE;strokeColor=#3273B6;strokeWidth=1.6;" value="Normalize spaces and tabs&amp;#xa;Paragraph-aware chunks (500 chars)" vertex="1">
+          <mxGeometry height="120" width="216" x="772" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="stoh" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#ffffff;fillColor=#3273B6;strokeColor=#3273B6;" value="05  STORE" vertex="1">
+          <mxGeometry height="40" width="216" x="1006" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="sto" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=13;fontSize=15;fontColor=#163047;fillColor=#E2EFFE;strokeColor=#3273B6;strokeWidth=1.6;" value="Write prepared_text.jsonl&amp;#xa;726 chunks across 2 sources" vertex="1">
+          <mxGeometry height="120" width="216" x="1006" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="valh" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#ffffff;fillColor=#6854B9;strokeColor=#6854B9;" value="06  VALIDATE" vertex="1">
+          <mxGeometry height="40" width="216" x="1240" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="val" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=13;fontSize=15;fontColor=#163047;fillColor=#E7E7FA;strokeColor=#6854B9;strokeWidth=1.6;" value="Non-empty output&amp;#xa;Part B SHA-256 match&amp;#xa;Repeatability PASS" vertex="1">
+          <mxGeometry height="120" width="216" x="1240" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="linh" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#ffffff;fillColor=#6854B9;strokeColor=#6854B9;" value="07  RECORD LINEAGE" vertex="1">
+          <mxGeometry height="40" width="216" x="1474" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lin" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=13;fontSize=15;fontColor=#163047;fillColor=#E7E7FA;strokeColor=#6854B9;strokeWidth=1.6;" value="Source and output SHA-256&amp;#xa;pipeline_manifest.json" vertex="1">
+          <mxGeometry height="120" width="216" x="1474" y="239" as="geometry" />
+        </mxCell>
+        <mxCell id="esrcing" edge="1" parent="1" source="src" style="endArrow=block;endFill=1;strokeWidth=2.5;strokeColor=#566779;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ing" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eingins" edge="1" parent="1" source="ing" style="endArrow=block;endFill=1;strokeWidth=2.5;strokeColor=#566779;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="ins" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="einspre" edge="1" parent="1" source="ins" style="endArrow=block;endFill=1;strokeWidth=2.5;strokeColor=#566779;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="pre" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="epresto" edge="1" parent="1" source="pre" style="endArrow=block;endFill=1;strokeWidth=2.5;strokeColor=#566779;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sto" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="estoval" edge="1" parent="1" source="sto" style="endArrow=block;endFill=1;strokeWidth=2.5;strokeColor=#566779;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="val" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="evallin" edge="1" parent="1" source="val" style="endArrow=block;endFill=1;strokeWidth=2.5;strokeColor=#566779;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="lin" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="failureheading" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=19;fontStyle=1;fontColor=#9C2D2D;strokeColor=none;fillColor=none;" value="FAILURE POINTS AND RESPONSES" vertex="1">
+          <mxGeometry height="28" width="1200" x="70" y="428" as="geometry" />
+        </mxCell>
+        <mxCell id="fail1" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=22;fontSize=18;fontColor=#8C2929;fillColor=#FCEAEA;strokeColor=#D86868;strokeWidth=2;" value="FAILURE 1 — Missing PDF source&amp;#xa;Response: Stop pipeline with FileNotFoundError." vertex="1">
+          <mxGeometry height="95" width="610" x="160" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="fail2" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=22;fontSize=18;fontColor=#8C2929;fillColor=#FCEAEA;strokeColor=#D86868;strokeWidth=2;" value="FAILURE 2 — Empty or missing output&amp;#xa;Response: Stop pipeline with ValueError / FileNotFoundError." vertex="1">
+          <mxGeometry height="95" width="700" x="965" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="efail1" edge="1" parent="1" source="ing" style="endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=2;strokeColor=#C65353;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="fail1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="efail2" edge="1" parent="1" source="val" style="endArrow=open;endFill=0;dashed=1;dashPattern=6 4;strokeWidth=2;strokeColor=#C65353;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="fail2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="outputheading" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=19;fontStyle=1;fontColor=#1F2937;strokeColor=none;fillColor=none;" value="EXECUTED EVIDENCE" vertex="1">
+          <mxGeometry height="28" width="1640" x="70" y="644" as="geometry" />
+        </mxCell>
+        <mxCell id="evidence" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=24;fontSize=18;fontColor=#344054;fillColor=#F4F7FB;strokeColor=#C6D3E3;strokeWidth=1.5;" value="Part B: data/processed/prepared_text.jsonl  +  data/week3_manifest.json&amp;#xa;Part C: data/pipeline_v1/documents/prepared_text.jsonl  +  pipeline_manifest.json&amp;#xa;2 input PDFs  •  726 chunks  •  output fingerprints matched on rerun" vertex="1">
+          <mxGeometry height="109" width="1640" x="70" y="686" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;italic=1;fontColor=#64748B;strokeColor=none;fillColor=none;" value="Known limitation (not yet resolved): 500-character chunks may split sentences; original PDF page numbers are not preserved (page = None)." vertex="1">
+          <mxGeometry height="30" width="1640" x="70" y="820" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
