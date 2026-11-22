@@ -131,11 +131,103 @@ Both methods can split sentences. The selected paragraph-aware configuration doe
 - The 1993 documents are suitable for foundational concepts, not current equipment-specific procedures.
 - Retrieval relevance and answer accuracy have not been evaluated.
 - Source access metadata requires final review.
-### Reproduce / validate the Topic 3 outputs
+
+### Reproduce / Validate the Topic 3 Outputs
 
 - [Runbook and preserved historical evidence](docs/week3_reproducibility.md): execute the notebook in Google Colab or from the local repository with verified DOE PDFs.
 - [Published-data verification script](scripts/verify_week3_artifacts.py): run `py scripts/verify_week3_artifacts.py` (Windows) to verify both JSONL datasets against their recorded 6 November 2026 SHA-256 fingerprints.
 - The two raw PDFs are restored from [official-source download instructions](data/raw/README.md) and remain untracked. Notebook installation of `pypdf` is handled in its Pathway A cell.
+
+## Week 4 - Data Quality and Responsible Data Practices
+
+### Objective
+
+Assess the quality, coverage, and responsible use of the prepared Topic 3 dataset before proceeding with retrieval and RAG development.
+
+The assessment focuses on five quality dimensions: completeness, consistency, accuracy, timeliness, and uniqueness. It also examines validation results, potential bias, source provenance, and data governance.
+
+### Audited Dataset
+
+The audit uses the existing Topic 3 Part C output and its corresponding pipeline manifest:
+
+- **Prepared dataset:** [`data/pipeline_v1/documents/prepared_text.jsonl`](data/pipeline_v1/documents/prepared_text.jsonl)
+- **Matching manifest:** [`data/pipeline_v1/documents/pipeline_manifest.json`](data/pipeline_v1/documents/pipeline_manifest.json)
+- **Data pathway:** A — PDF/TXT
+- **Total records:** 726 text chunks
+- **Source documents:** 2 DOE Mechanical Science handbooks
+- **Inspection sample:** 16 representative chunks, eight from each document
+
+The audit focuses on two Topic 2 functional requirements:
+
+- **FR2:** Retrieve relevant passages from approved documents before generating technical answers.
+- **FR3:** Include the source document title and page or section in document-based answers.
+
+### Data Quality Findings
+
+| Quality Dimension | Finding | Assessment |
+|---|---|---|
+| Completeness | All 726 records contain nonempty text, but structured page/section metadata is missing. | Warning |
+| Consistency | Records use the same processing configuration, but some contain broken text boundaries and formatting artifacts. | Warning |
+| Accuracy | Source hashes match the historical manifest, but full source-to-chunk fidelity is not verified. | N.V. |
+| Timeliness | Both source documents were published in 1993; suitability for current maintenance procedures is unverified. | Warning |
+| Uniqueness | All 726 record IDs and exact text values are unique. | Pass |
+
+N.V. means **Not Verified**, indicating that available evidence is insufficient to confirm the result.
+
+### Validation Results
+
+Two validation rules were applied to all 726 prepared records.
+
+| Rule | Requirement | Passed | Failed | Result |
+|---|---|---:|---:|---|
+| V1 — Text and source validation | FR2 | 726 | 0 | PASS |
+| V2 — Structured citation metadata validation | FR3 | 0 | 726 | FAIL |
+
+V1 confirms that all records contain nonempty text and reference one of the two expected source documents.
+
+V2 identifies missing page or section metadata in every record. This prevents the current dataset from reliably supporting the citation requirement defined in FR3.
+
+### Duplicate, Anomaly and Coverage Findings
+
+- **Record uniqueness:** 726 unique record IDs.
+- **Exact text duplicates:** 0 duplicate groups.
+- **Chunk boundary screening:** 442 of 724 boundaries (61.05%) were flagged as possible word splits. This is a screening result, not a confirmed defect rate.
+- **PDF extraction:** 239 of 252 pages returned extracted text. Of the remaining 13 pages, five were visually confirmed blank and eight remain unverified.
+- **Pumps:** 148 keyword-matching chunks (129 from Volume 1, 19 from Volume 2).
+- **Valves:** 277 keyword-matching chunks (61 from Volume 1, 216 from Volume 2).
+
+Keyword counts indicate topic mentions, not confirmed depth or completeness of technical coverage.
+
+### Bias and Governance Assessment
+
+The audit identified potential representation bias because the dataset consists of only two mechanical-science handbooks published in 1993. Some topics may be more strongly represented than others, while the originally proposed alignment and lubrication coverage remains unverified.
+
+The current chunking process also introduces possible pipeline-induced risks by splitting technical explanations and losing reliable page-level provenance.
+
+Both source documents include Distribution Statement A, allowing public release and unlimited distribution. However, additional intended-use permissions for indexing, redistribution, or external-service processing remain Not Verified.
+
+No complete sensitive-information screening was performed. Source verification, responsible storage, and permission reviews remain necessary before further use.
+
+### Quality-Gate Decision
+
+**HOLD — For downstream citation-based RAG integration.**
+
+The dataset passed structural validation but failed structured citation-metadata validation for all 726 records. Chunk-boundary issues and unresolved governance checks also require attention.
+
+The HOLD decision does not invalidate the completed Topic 3 pipeline. The existing dataset remains the verified baseline for controlled improvements and future comparison.
+
+### Outstanding Actions
+
+1. **Improve chunking and citation traceability.** Create a separately versioned pipeline output that preserves page or section references and improves word/sentence boundaries. Repeat V1 and V2 and perform representative source-to-chunk checks before citation-based indexing.
+2. **Review data coverage and governance.** Verify intended processing permissions, inspect remaining unverified source pages, and assess topic coverage before downstream indexing, evaluation, or public sharing.
+
+### Week 4 Deliverable
+
+- [Data Quality & Bias Report](docs/week4_data_quality_report.md)
+
+The full report documents the inspection sample, five-dimension scorecard, validation evidence, duplicate and coverage findings, potential bias, governance safeguards, mitigation actions, and the HOLD decision.
+
+No new data pipeline or RAG model was implemented during Topic 4. All additional checks were read-only, and the original Topic 3 dataset was preserved.
 
 ## Weekly Progress
 
@@ -144,9 +236,14 @@ Both methods can split sentences. The selected paragraph-aware configuration doe
 | 1 | AI system analysis and project scoping | Observation sheet, system map, project scope and README | Completed |
 | 2 | Requirements, evaluation criteria and V1 architecture | Requirements specification, evaluation criteria, architecture diagram and design decisions | Completed |
 | 3 | PDF data engineering | Prepared dataset, lineage manifests, executable pipeline and repeatability verification | Completed |
+| 4 | Data quality and responsible data practices | Data Quality & Bias Report, validation findings, coverage assessment and quality-gate decision | Completed |
 
 ## Current Status
 
-Topics 1-3 are complete. The project has defined its requirements and architecture, prepared 726 text records from two DOE mechanical science PDFs, and verified pipeline repeatability.
+Topics 1–4 laboratory activities are complete.
 
-The RAG chatbot, retrieval evaluation and page-level citation support have not yet been implemented.
+The project has defined its requirements and architecture, prepared 726 text chunks from two DOE Mechanical Science PDFs, verified the Topic 3 pipeline outputs, and completed a data-quality and responsible-data audit.
+
+The Topic 4 quality gate is **HOLD for downstream citation-based RAG use** because all 726 records lack structured page or section references. The existing dataset is retained as the historical baseline while source traceability, chunk boundaries, permissions, and coverage require further review.
+
+The RAG chatbot, retrieval evaluation, generated-answer accuracy assessment, and page-level citation support have not yet been implemented.
