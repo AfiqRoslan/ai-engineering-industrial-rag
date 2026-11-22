@@ -1,0 +1,2 @@
+# Preserve historical JSONL CRLF fingerprints in Git
+*.jsonl -text

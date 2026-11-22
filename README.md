@@ -131,6 +131,12 @@ Both methods can split sentences. The selected paragraph-aware configuration doe
 - The 1993 documents are suitable for foundational concepts, not current equipment-specific procedures.
 - Retrieval relevance and answer accuracy have not been evaluated.
 - Source access metadata requires final review.
+### Reproduce / validate the Topic 3 outputs
+
+- [Runbook and preserved historical evidence](docs/week3_reproducibility.md): execute the notebook in Google Colab or from the local repository with verified DOE PDFs.
+- [Published-data verification script](scripts/verify_week3_artifacts.py): run `py scripts/verify_week3_artifacts.py` (Windows) to verify both JSONL datasets against their recorded 6 November 2026 SHA-256 fingerprints.
+- The two raw PDFs are restored from [official-source download instructions](data/raw/README.md) and remain untracked. Notebook installation of `pypdf` is handled in its Pathway A cell.
+
 ## Weekly Progress
 
 | Week | Focus | Deliverable | Status |
