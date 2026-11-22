@@ -99,3 +99,7 @@ A language model without retrieval would be simpler to develop and maintain. How
 Document retrieval allows the system to locate relevant information before generating an answer. This supports FR2 and NFR2 by improving access to relevant source information.
 
 The accepted trade-off is greater system complexity and potentially longer response times. This is considered reasonable because the main purpose of the chatbot is to provide reliable technical explanations based on verifiable documents.
+
+## Later Data-Source Selection (Week 3)
+
+The executed Week 3 preparation pipeline used [DOE *Mechanical Science*, Volume 1](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL1.pdf) and [Volume 2](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL2.pdf) instead of the FIST manuals considered in the original design. The [source register](source_register.md) records their identities, local filenames, source checksums, access statements and processed-output lineage. This later selection does not change the initial architectural decisions or claim retrieval/citation validation.

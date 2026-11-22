@@ -30,6 +30,8 @@
 
 The candidate manuals are publicly accessible but have an internal-use notice. Public access does not by itself confirm permission to index, redistribute or send their content to an external AI service. Alternative permitted manuals may be needed.
 
+**Week 3 source-selection update (implementation evidence, not a change to the original proposal):** The executed pipeline instead used [DOE Mechanical Science Volume 1 (1993)](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL1.pdf) and [Volume 2 (1993)](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL2.pdf). The proposed FIST manuals above were not processed. The selected DOE corpus supports mechanical-science fundamentals rather than assumed complete coverage of alignment and lubrication topics. Evaluation questions must be based on what the documents actually contain. See the [source register](source_register.md) and [Week 3 inventory](week3_data_inventory.md).
+
 ## Section 1 — Functional Requirements
 
 | ID | The system SHALL | Scope boundary — SHALL NOT |

@@ -82,3 +82,7 @@ EduAdvisor focuses on university academic information. The Industrial Knowledge 
 **Risk 2 — Unsafe maintenance advice:** Generated information could be mistaken for instructions to operate or repair actual machinery. The application will be limited to educational explanations and will not provide site-specific maintenance approval or safety-critical operational decisions.
 
 **Risk 3 — Document permissions and privacy:** Some manuals may have usage restrictions, and submitted questions could contain confidential industrial information or personal data. Only documents permitted for the intended processing will be used, and the prototype will avoid collecting confidential or personal information.
+
+---
+
+**Later implementation note (Week 3):** The FIST manuals listed above were the original proposed sources, not the documents used in the executed Week 3 pipeline. See the [source register](source_register.md) for the official URLs of the two DOE *Mechanical Science* volumes actually processed and their recorded provenance. This note preserves the original Week 1 proposal as historical project evidence.

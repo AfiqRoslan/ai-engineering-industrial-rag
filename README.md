@@ -67,10 +67,21 @@ Develop an executable and repeatable pipeline to prepare mechanical engineering 
 
 ### Actual Data Sources
 
-- DOE Mechanical Science Volume 1 (1993) - 122 pages
-- DOE Mechanical Science Volume 2 (1993) - 130 pages
+- [DOE Mechanical Science Volume 1 (1993) — 122 pages](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL1.pdf) — DOE-HDBK-1018/1-93 (`mechanical_science_vol1.pdf`)
+- [DOE Mechanical Science Volume 2 (1993) — 130 pages](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL2.pdf) — DOE-HDBK-1018/2-93 (`mechanical_science_vol2.pdf`)
 
 These documents carry Distribution Statement A, approving public release with unlimited distribution. The previously proposed FIST manuals were not used for this pipeline.
+
+### Data Storage and Source Traceability
+
+- **Raw inputs (local only):** `data/raw/` — [download instructions and original checksums](data/raw/README.md). The raw PDFs are not tracked in Git.
+- **Canonical source register:** [source identity, official PDF URLs, access statements, checksums and lineage](docs/source_register.md).
+- **Structured source manifest:** [`data/raw/source_manifest.json`](data/raw/source_manifest.json).
+- **Part B prepared data:** [`data/processed/prepared_text.jsonl`](data/processed/prepared_text.jsonl).
+- **Part C prepared data:** [`data/pipeline_v1/documents/prepared_text.jsonl`](data/pipeline_v1/documents/prepared_text.jsonl).
+- **Historical execution evidence:** [Part B manifest](data/week3_manifest.json) and [Part C manifest](data/pipeline_v1/documents/pipeline_manifest.json).
+
+The executed manifests still contain placeholder version/access fields; the supplemental source register does not modify past run metadata. Source-page citations are not yet supported because output records contain `page: null`.
 
 ### Implementation
 

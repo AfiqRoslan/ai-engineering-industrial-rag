@@ -5,10 +5,12 @@
 
 ## Part A — Data Source Inventory
 
-| Source ID | Filename | Type and Purpose | Version / Date / Owner | Access / Rights | Inspection Evidence |
-|---|---|---|---|---|---|
-| S01 | mechanical_science_vol1.pdf | PDF; mechanical science fundamentals, including diesel engines and pumps | DOE-HDBK-1018/1-93; January 1993; U.S. Department of Energy | Approved for public release; distribution unlimited | 122 pages; page 30 contains readable diesel engine explanations (1,610 characters) |
-| S02 | mechanical_science_vol2.pdf | PDF; mechanical science fundamentals, including valves | DOE-HDBK-1018/2-93; January 1993; U.S. Department of Energy | Approved for public release; distribution unlimited | 130 pages; page 30 contains readable gate valve explanations (1,828 characters) |
+| Source ID | Raw Filename | Official Source URL | Type and Purpose | Version / Date / Owner | Access / Rights | Inspection Evidence |
+|---|---|---|---|---|---|---|
+| S01 | `mechanical_science_vol1.pdf` | [DOE PDF — Volume 1](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL1.pdf) | PDF; mechanical science fundamentals, including diesel engines and pumps | DOE-HDBK-1018/1-93; January 1993; U.S. Department of Energy | Approved for public release; distribution unlimited | 122 pages; page 30 contains readable diesel engine explanations (1,610 characters) |
+| S02 | `mechanical_science_vol2.pdf` | [DOE PDF — Volume 2](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL2.pdf) | PDF; mechanical science fundamentals, including valves | DOE-HDBK-1018/2-93; January 1993; U.S. Department of Energy | Approved for public release; distribution unlimited | 130 pages; page 30 contains readable gate valve explanations (1,828 characters) |
+
+Source IDs and SHA-256 fingerprints are documented in the [source register](source_register.md); instructions for restoring files under `data/raw/` are in the [raw-data README](../data/raw/README.md). Source URLs identify official DOE editions; byte equality with future downloads has not been established.
 
 ## Requirements and Data Needs
 

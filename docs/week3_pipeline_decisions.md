@@ -22,10 +22,12 @@ The pipeline prepares approved technical documents for a future retrieval-augmen
 
 | ID | Document | Inspection evidence |
 |---|---|---|
-| S01 | `data/raw/mechanical_science_vol1.pdf` — DOE-HDBK-1018/1-93, *Mechanical Science*, Volume 1 (1993) | 122 pages; 169,246 extracted characters; readable technical text about diesel engines and related equipment. |
-| S02 | `data/raw/mechanical_science_vol2.pdf` — DOE-HDBK-1018/2-93, *Mechanical Science*, Volume 2 (1993) | 130 pages; 192,232 extracted characters; readable technical text about valves and related mechanical systems. |
+| S01 | `data/raw/mechanical_science_vol1.pdf` — [DOE-HDBK-1018/1-93, *Mechanical Science*, Volume 1 (1993)](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL1.pdf) | 122 pages; 169,246 extracted characters; readable technical text about diesel engines and related equipment. |
+| S02 | `data/raw/mechanical_science_vol2.pdf` — [DOE-HDBK-1018/2-93, *Mechanical Science*, Volume 2 (1993)](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL2.pdf) | 130 pages; 192,232 extracted characters; readable technical text about valves and related mechanical systems. |
 
 Both source documents contain **Distribution Statement A: Approved for public release; distribution is unlimited**. This provides evidence of public distribution, but does not by itself establish that all possible reuse rights or downstream redistribution conditions have been checked. The sources are older fundamentals handbooks, not current operating procedures.
+
+The [source register](source_register.md) connects these links, local filenames, Week 3 SHA-256 checksums, and both prepared outputs. The raw PDFs were stored locally, not included in the GitHub repository. The historical generated manifests retain their original metadata placeholders.
 
 ## 3. Part B — Preparation Comparison and Decision
 

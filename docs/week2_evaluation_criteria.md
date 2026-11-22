@@ -11,6 +11,8 @@ The evaluation will focus on answer correctness, retrieval relevance, source cit
 
 All evaluation thresholds are proposed targets. Actual results will be collected after the prototype has been developed.
 
+**Data-source provenance:** The actual Week 3 data sources were [DOE Mechanical Science Volume 1](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL1.pdf) and [Volume 2](https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL2.pdf) rather than the originally proposed FIST manuals. See the [source register](source_register.md). The tests and thresholds below remain **proposed**; no retrieval or answer evaluation was completed in Week 3.
+
 ## 2. Evaluation Criteria Table
 
 | Objective / Requirement ID | Evaluation Criterion | Capability Bucket | Measurement Method | Metric | Threshold | User / Business Outcome |

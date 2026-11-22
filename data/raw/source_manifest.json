@@ -1,0 +1,44 @@
+{
+  "register_type": "source-provenance-supplement",
+  "applies_to": "Week 3 executed document pipeline",
+  "documentation_updated_on": "2026-11-16",
+  "note": "External URLs identify official DOE editions. Original input SHA-256 values are copied from the Week 3 execution manifests; later downloads were not checked for byte equality. This file is not an execution manifest.",
+  "sources": [
+    {
+      "source_id": "S01",
+      "document_title": "DOE Fundamentals Handbook — Mechanical Science, Volume 1 of 2",
+      "document_number": "DOE-HDBK-1018/1-93",
+      "publication_date": "January 1993",
+      "publisher": "U.S. Department of Energy",
+      "official_pdf_url": "https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL1.pdf",
+      "local_raw_path": "data/raw/mechanical_science_vol1.pdf",
+      "pages_recorded_in_week3": 122,
+      "sha256_recorded_in_week3": "c1e37601164acf95cbaecad93b1db9841ad8d7670bf30a4fdd6ff0a87c6a0070",
+      "access_statement": "Distribution Statement A: Approved for public release; distribution is unlimited",
+      "purpose": "Fundamentals of diesel engines, heat exchangers and pumps"
+    },
+    {
+      "source_id": "S02",
+      "document_title": "DOE Fundamentals Handbook — Mechanical Science, Volume 2 of 2",
+      "document_number": "DOE-HDBK-1018/2-93",
+      "publication_date": "January 1993",
+      "publisher": "U.S. Department of Energy",
+      "official_pdf_url": "https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1018-93_VOL2.pdf",
+      "local_raw_path": "data/raw/mechanical_science_vol2.pdf",
+      "pages_recorded_in_week3": 130,
+      "sha256_recorded_in_week3": "f569f8de24e0c9b23fa8f5c965c3d0740daa5e41db0f029ad8e3893d3fd9e2fd",
+      "access_statement": "Distribution Statement A: Approved for public release; distribution is unlimited",
+      "purpose": "Mechanical-science fundamentals including valves and other components"
+    }
+  ],
+  "derived_outputs": [
+    "data/processed/prepared_text.jsonl",
+    "data/pipeline_v1/documents/prepared_text.jsonl"
+  ],
+  "execution_evidence": [
+    "data/week3_manifest.json",
+    "data/pipeline_v1/documents/pipeline_manifest.json",
+    "notebooks/week3_pipeline.ipynb"
+  ],
+  "known_limitation": "Prepared records have page=null; page-accurate citations pending"
+}
